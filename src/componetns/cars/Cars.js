@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {getCars} from "../../servis/cars.servis";
-import Car from "../car/Car";
+
 
 export default function Cars({url}) {
 
