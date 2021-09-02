@@ -12,16 +12,20 @@ export default function App() {
 
 
     useEffect(()=>{
-        getMovie().then(({data})=> {
-            dispatch({type:'getMovie',action: {data}})
+        getMovie().then(value => {
+            dispatch({type:'getMovie',payload:value.data.results})
         })
 },[])
+
+    // useEffect(()=>{
+    //     getMovie().then(value => console.log(value.data.results))
+    // },[])
 
     return (
 
         <div>
             {
-                movies.map(value=> value && <div>{value.id}</div>)
+              movies.map(value => value && <div>{value.id}</div>)
             }
         </div>
 

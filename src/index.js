@@ -8,11 +8,11 @@ import {createStore} from 'redux'
 
 
 
-let initiatialstate = {array: []}
+let initiatialstate = {movies: []}
 export const rootReducer = (state = initiatialstate,action) => {
     switch (action.type){
         case 'getMovie':
-            return {...state,array:[action.payload]}
+            return {...state,movies:[...action.payload]}
         default:
             return ''
     }
