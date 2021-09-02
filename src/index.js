@@ -4,11 +4,28 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from "react-redux";
+import {createStore} from 'redux'
 
+
+
+let initiatialstate = {array: []}
+export const rootReducer = (state = initiatialstate,action) => {
+    switch (action.type){
+        case 'getMovie':
+            return {...state,array:[action.payload]}
+        default:
+            return ''
+    }
+}
+
+
+export let store = createStore(rootReducer)
 
 ReactDOM.render(
   <React.StrictMode>
+      <Provider store={store}>
       <App />
+      </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
