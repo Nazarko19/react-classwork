@@ -13,7 +13,7 @@ export default function App() {
 
     useEffect(()=>{
         getMovie().then(({data})=> {
-            dispatch({type:'getMovie',action:data})
+            dispatch({type:'getMovie',action: {data}})
         })
 },[])
 
